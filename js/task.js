@@ -40,7 +40,8 @@ function onImgClick(event) {
     const fotoItem = event.target.dataset.source;
     openModalBtn.classList.add('is-open');
     window.addEventListener('keydown', onPressEscape);
-    document.querySelector('.lightbox__image').setAttribute('src', fotoItem);
+    const addUrl = document.querySelector('.lightbox__image');
+    addUrl.setAttribute('src', fotoItem);
 };
 
 closeModalBtn.addEventListener('click', onCloseModal);
@@ -50,7 +51,8 @@ window.addEventListener('keydown', onPressEscape);
 function onCloseModal() {
     window.removeEventListener('keydown', onPressEscape);
     openModalBtn.classList.remove('is-open');
-    document.querySelector('.lightbox__image').setAttribute('src', '');
+    const removeUrl = document.querySelector('.lightbox__image');
+    removeUrl.setAttribute('src', '');
 };
 
 function onBackDropClick(event) {
